@@ -106,7 +106,7 @@ namespace NzbDrone.Core.Indexers.Qobuz
                 AudioQuality.FLACHiRes24Bit192Khz => 9216000,
                 _ => 320000
             };
-            size = x.Duration.Value * bps;
+            size = (x.Duration.Value * bps) / 8;
 
             result.Size = size;
             result.Title = $"{x.Artist.Name} - {x.CompleteTitle}";
